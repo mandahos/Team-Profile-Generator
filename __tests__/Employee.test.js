@@ -7,12 +7,12 @@ test('checks to see employee has required information', () => {
 });
 
 test('checks to see employee info entered', () =>{
-    const employee = new Employee('Jane');
+    const employee = new Employee('Jane', '479', 'jane@employee.com', 'employee');
 
     expect(typeof(employee)).toBe("object");
-    // expect(employee.id).toBe(expect.any(Number));
-    // expect(employee.id).toBe(expect.any(String));
-    // expect(employee.id).toBe(expect.any(String));
+    expect(employee.id).toEqual(expect.any(Number));
+    expect(employee.email).toEqual(expect.any(String));
+    expect(employee.name).toEqual(expect.any(String));
 });
 
 test('checks the value of employee ID', () => {
@@ -30,23 +30,3 @@ test('checks the value of employee ID', () => {
 //     expect(employee.email).toBe(expect(email));
 // });
 
-test('checks the value of employee ID', () => {
-    const id = 256;
-    const employee = new Employee('Jim', id);
-    
-    expect(employee.id).toBe(id);
-});
-
-test('checks to see employee email', () => {
-    const email = 'jim@employee.com';
-    const employee = new Employee('Jim', email);
-
-    expect(employee.email).toBe(String);
-});
-
-test('checks to see employees role', () => {
-    const role = employee
-    const employee = new Employee('Jim', role);
-   
-       expect(employee.role).toBe(role);
-});
