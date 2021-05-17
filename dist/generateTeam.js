@@ -1,5 +1,5 @@
 
-//mamager card
+//manager card
 const generateManager = function (manager) {
     for (let i  = 0; i  < manager.length; i ++) {
         return ` <div class="tile is-ancestor">
@@ -16,7 +16,42 @@ const generateManager = function (manager) {
         
     }
    
+};
+
+//engineer card
+const generateEngineer = function (engineer) {
+    for (let i  = 0; i  < engineer.length; i ++) {
+        return ` <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+          <p class="title">Engineer</p>  
+          <h3>${engineer[i].name}</h3>
+          <p class="id">ID: ${engineer[i].id}</p>
+          <p class="email">Email: ${engineer[i].email}</p> 
+          <p class="github">Github: ${engineer[i].github}</p>   
+            </article>
+        </div>
+        `
 }
+}
+
+//intern card
+const generateIntern = function (intern) {
+    for (let i  = 0; i  < intern.length; i ++) {
+        return ` <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+          <p class="title">Intern</p>  
+          <h3>${intern[i].name}</h3>
+          <p class="id">ID: ${intern[i].id}</p>
+          <p class="email">Email: ${intern[i].email}</p> 
+          <p class="school">School: ${intern[i].school}</p>   
+            </article>
+        </div>
+        `
+}
+}
+
 
 //employee card
 const generateHtml = function (data) {
@@ -37,7 +72,9 @@ const generateHtml = function (data) {
               </p>
             </div>
           </section>
-      ${generateManager (data)}  
+      ${generateManager (data)}
+      ${generateEngineer (data)}  
+      ${generateIntern (data)}    
           
           
     </body>
@@ -45,15 +82,5 @@ const generateHtml = function (data) {
     `
 }
 
-//engineer card
-const generateEngineer = function (engineer) {
-    return ` 
-    `
-}
 
-//intern card
-const generateIntern = function (intern) {
-    return ` 
-    `
-}
 module.exports = {generateHtml}

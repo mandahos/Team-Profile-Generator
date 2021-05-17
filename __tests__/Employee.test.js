@@ -21,12 +21,5 @@ test('checks the value of employee ID', () => {
     expect(employee.id).toBe(id);
 });
 
-// test('checks to see employee was entered', () =>{
-//     const employee = new Employee('Jim', '#256', 'jim@employee.com', 'employee');
 
-//     // expect(typeof(employee)).toBe("object");
-//     expect(employee.name).toBe(expect(name));
-//     expect(employee.id).toBe(expect(id));
-//     expect(employee.email).toBe(expect(email));
-// });
 
