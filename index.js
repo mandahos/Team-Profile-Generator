@@ -1,6 +1,7 @@
 //systems
 const inquirer = require("inquirer");
 const path = require("path");
+const fs = require("fs");
 // pull the team info based on .js files for each category?
 
 const Engineer = require ('./lib/Engineer');
@@ -8,9 +9,8 @@ const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const generateHtml = require('./dist/generateTeam')
 //pull in Team through command line
- const managerArray = []
- const internArray = []
- const engineerArray = []
+ const team = []
+
 //var inquirer = require('inquirer');
 
 function addManager() {
@@ -39,8 +39,8 @@ function addManager() {
 
     .then(function({name, id, email, officenumber}) {
         var manager = new Manager(name, id, email, officenumber)
-        managerArray.push(manager)
-        console.log(managerArray)
+        team.push(manager)
+        console.log(team)
         buildTeam()
     },
     
@@ -74,8 +74,8 @@ function addIntern() {
 
     .then(function({name, id, email, school}) {
         var intern = new Intern(name, id, email, school)
-        internArray.push(intern)
-        console.log(internArray)
+        team.push(intern)
+        console.log(team)
       buildTeam()
     },
     
@@ -106,18 +106,15 @@ function addEngineer() {
         name: "github"
     }
    ])
-
-    .then(function({name, id, email, github}) {
-        var engineer = new Engineer(name, id, email, github)
-        engineerArray.push(engineer)
-        console.log(engineerArray)
-      buildTeam()
-    },
-    
-   );
-   
+        .then(function({name, id, email, github}) {
+    var engineer = new Engineer(name, id, email, github)
+    team.push(engineer)
+    console.log(team)
+  buildTeam()
+},
+        )
 }
-
+   
 function buildTeam() {
     inquirer.prompt ([
         {
@@ -135,20 +132,24 @@ function buildTeam() {
             addEngineer()
         } else if(choice === "Intern") {
             addIntern()
-        } else {
-            //call finishteam function
+        } 
+        else {
+            
+            finishTeam();
         }
     })
     
 }
-const output = 
+
+
 function finishTeam() {
+
+    fs.writeFileSync('team.html', generateHtml(team))
+
+
     
 }
 
 
+
 addManager()
-
-
-
-

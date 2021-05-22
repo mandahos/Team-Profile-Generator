@@ -1,60 +1,40 @@
 
-//manager card
-const generateManager = function (manager) {
-    for (let i  = 0; i  < manager.length; i ++) {
+//team card
+const buildTeam = function (team) {
+  
+    for (let i  = 0; i  <team[i].length; i ++) {
         return ` <div class="tile is-ancestor">
         <div class="tile is-parent">
           <article class="tile is-child box">
-          <p class="title">Manager</p>  
-          <h3>${manager[i].name}</h3>
-          <p class="id">ID: ${manager[i].id}</p>
-          <p class="email">Email: ${manager[i].email}</p> 
-          <p class="officeNum">Office Number: ${manager[i].officeNumber}</p>   
+          <p class="title">team</p>  
+          <h3>${team[i].name}</h3>
+          <p class="id">ID: ${team[i].id}</p>
+          <p class="email">Email:<a href:"mailto:${team.email}" ${team[i].email}</p> 
+          
             </article>
         </div>
         `
         
     }
-   
+    generateLastQ();
 };
 
-//engineer card
-const generateEngineer = function (engineer) {
-    for (let i  = 0; i  < engineer.length; i ++) {
-        return ` <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-          <p class="title">Engineer</p>  
-          <h3>${engineer[i].name}</h3>
-          <p class="id">ID: ${engineer[i].id}</p>
-          <p class="email">Email: ${engineer[i].email}</p> 
-          <p class="github">Github: ${engineer[i].github}</p>   
-            </article>
-        </div>
-        `
-}
-}
+//creating the team cards
+const generateLastQ = function (team) {
+   
+  if (team.role === 'Manager') {
+    return  `<p class="officeNum">Office Number: ${team.officeNumber}</p>`
+  } else if (team.role === 'Intern') {
+    return `<p class="school">School: ${team.school}</p>`
+  } else {
+    return `<p class="github">Github: ${team.github}</p>`
+  }
 
-//intern card
-const generateIntern = function (intern) {
-    for (let i  = 0; i  < intern.length; i ++) {
-        return ` <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child box">
-          <p class="title">Intern</p>  
-          <h3>${intern[i].name}</h3>
-          <p class="id">ID: ${intern[i].id}</p>
-          <p class="email">Email: ${intern[i].email}</p> 
-          <p class="school">School: ${intern[i].school}</p>   
-            </article>
-        </div>
-        `
-}
 }
 
 
 //employee card
-const generateHtml = function (data) {
+  function generateHtml() {
     return ` <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -72,9 +52,7 @@ const generateHtml = function (data) {
               </p>
             </div>
           </section>
-      ${generateManager (data)}
-      ${generateEngineer (data)}  
-      ${generateIntern (data)}    
+      ${buildTeam}   
           
           
     </body>
@@ -83,4 +61,4 @@ const generateHtml = function (data) {
 }
 
 
-module.exports = {generateHtml}
+module.exports = generateHtml
