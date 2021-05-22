@@ -1,15 +1,13 @@
-//systems
 const inquirer = require("inquirer");
-const path = require("path");
 const fs = require("fs");
 // pull the team info based on .js files for each category?
 
 const Engineer = require ('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-const generateHtml = require('./dist/generateTeam')
+const generateHtml = require('./dist/generateTeam');
 //pull in Team through command line
- const team = []
+ const team = [];
 
 //var inquirer = require('inquirer');
 
