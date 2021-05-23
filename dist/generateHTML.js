@@ -2,7 +2,6 @@
 //manager card
 const generateManager = function (manager) {
 
-
   return `
   <div class="card">
     <div class="card-content">
@@ -21,16 +20,15 @@ const generateManager = function (manager) {
 //enginer card
 const generateEngineer = function (engineer) {
 
-
-  return `<div class="card">
-  <header class="card-header">
-  <p class="card-header-title">🕹️ Engineer</p>
-  <h3>${engineer.name}</h3>
-  <div class="card-content">    
-  <div class="content">
-  <p class="id">ID: ${engineer.id}</p>
-  <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-  <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>    
+  return `
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
+      <p class="card-header-title">🕹️ Engineer</p>
+      <h3>${engineer.name}</h3> 
+      <p class="id">ID: ${engineer.id}</p>
+      <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+      <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>    
     </div>
   </div>
 </div>
@@ -40,19 +38,18 @@ const generateEngineer = function (engineer) {
 //intern card
 const generateIntern = function (intern) {
 
-
-  return `  <div class="card">
-  <header class="card-header">
-  <p class="card-header-title">🕹️ Engineer</p>
-  <h3>${engineer.name}</h3>
-  <div class="card-content">    
-  <div class="content">
-  <p class="id">ID: ${engineer.id}</p>
-  <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-  <p class="school">School: ${intern.school}</p>    
+  return `  
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
+      <p class="card-header-title">📚 Intern</p>
+      <h3>${engineer.name}</h3>
+      <p class="id">ID: ${engineer.id}</p>
+      <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+      <p class="school">School: ${intern.school}</p>    
+      </div>
     </div>
   </div>
-</div>
   `
 };
 
