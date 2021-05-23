@@ -2,7 +2,7 @@
 //team card
 const finishTeam = function (team) {
   
-  for (let i  = 0; i  <team[i].length; i ++) {
+  for (let i  = 0; i  <team.length; i ++) {
       return ` <div class="tile is-ancestor">
       <div class="tile is-parent">
         <article class="tile is-child box">
