@@ -43,9 +43,9 @@ const generateIntern = function (intern) {
     <div class="card-content">
       <div class="content">
       <p class="card-header-title">📚 Intern</p>
-      <h3>${engineer.name}</h3>
-      <p class="id">ID: ${engineer.id}</p>
-      <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+      <h3>${intern.name}</h3>
+      <p class="id">ID: ${intern.id}</p>
+      <p class="email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
       <p class="school">School: ${intern.school}</p>    
       </div>
     </div>
