@@ -51,7 +51,7 @@ const generateIntern = function (intern) {
     </div>
   </div>
   `
-};
+}
 
 //push to page
 generateHTML = (data) => {
